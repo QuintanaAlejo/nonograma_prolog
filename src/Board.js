@@ -1,10 +1,24 @@
 import React from 'react';
 import Square from './Square';
 import Clue from './Clue';
+import { render } from '@testing-library/react';
 
 function Board({ grid, rowsClues, colsClues, onClick, rowSat, colSat}) {
     const numOfRows = grid.length;
     const numOfCols = grid[0].length;
+
+    function nivelCompletado(rowSat, colSat, rowsClues, colsClues) {
+        return (
+          rowSat.length === rowsClues.length &&
+          colSat.length === colsClues.length 
+        );
+    }
+    
+    const estaResuelto = nivelCompletado(rowSat, colSat, rowsClues, colsClues);
+    if (estaResuelto) {
+        console.log("Nivel completado!");
+    }
+
     return (
         <div className="flex-column">
             <div className={`flex justify-around`}>

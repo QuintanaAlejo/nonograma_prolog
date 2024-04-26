@@ -91,3 +91,4 @@ put(Content, [RowN, ColN], RowsClues, ColsClues, Grid, NewGrid, RowSat, ColSat):
     col_to_row(ColN, ClonedGrid, Column),
     search_clues(RowClue, ClonedRow, RowSat),
     search_clues(ColClue, Column, ColSat).
+    
