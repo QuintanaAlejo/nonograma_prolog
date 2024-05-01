@@ -1,7 +1,7 @@
 import React from 'react';
 import Square from './Square';
 import Clue from './Clue';
-import { render } from '@testing-library/react';
+import { useEffect } from 'react';
 
 function Board({ grid, rowsClues, colsClues, onClick, rowSat, colSat}) {
     const numOfRows = grid.length;
@@ -15,9 +15,13 @@ function Board({ grid, rowsClues, colsClues, onClick, rowSat, colSat}) {
     }
     
     const estaResuelto = nivelCompletado(rowSat, colSat, rowsClues, colsClues);
-    if (estaResuelto) {
-        console.log("Nivel completado!");
-    }
+    useEffect(() => {
+     if (estaResuelto) {
+        setTimeout(() => {
+            alert("Nivel completado!");
+          }, 0);
+     }
+    }, [estaResuelto]);
 
     return (
         <div className="flex-column">
