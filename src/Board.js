@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 function Board({ grid, rowsClues, colsClues, onClick, rowSat, colSat}) {
     const numOfRows = grid.length;
     const numOfCols = grid[0].length;
-
+//hola
     function nivelCompletado(rowSat, colSat, rowsClues, colsClues) {
         return (
           rowSat.length === rowsClues.length &&
